@@ -1,45 +1,65 @@
-# --------------------------
+
+# =========================
 # PATH
-# --------------------------
+# =========================
+
 export PATH="$HOME/.local/bin:$PATH"
-# --------------------------
+
+# =========================
 # History
-# --------------------------
+# =========================
+
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history
+
+HISTFILE="$HOME/.zsh_history"
 
 setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
-setopt AUTO_CD
 
-# --------------------------
-# Editor
-# --------------------------
-export EDITOR=nvim
+# =========================
+# Completion
+# =========================
 
-# --------------------------
+autoload -Uz compinit
+compinit
+
+# =========================
 # Aliases
-# --------------------------
-alias ll="ls -lah"
-alias la="ls -A"
+# =========================
+
+alias ls="eza"
+alias ll="eza -la"
+alias la="eza -a"
+alias lt="eza --tree"
+
+alias cat="bat"
+
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
+alias gl="git log --oneline --graph --decorate"
 
-# Ubuntu package ชื่อ fdfind
-alias fd="fdfind"
-
-# Ubuntu package ชื่อ batcat
-alias bat="batcat"
-
-# --------------------------
-# Prompt
-# --------------------------
-
+# =========================
 # mise
-eval "$(~/.local/bin/mise activate zsh)"
+# =========================
 
+eval "$(mise activate zsh)"
+
+# =========================
+# zoxide
+# =========================
+
+eval "$(zoxide init zsh)"
+
+# Plugins
+source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# =========================
 # Starship
+# =========================
+
 eval "$(starship init zsh)"
+	

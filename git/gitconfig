@@ -2,18 +2,14 @@
     name = Chayaphol Prapaipornlert
     email = chayaphol.pr@gmail.com
 
-[core]
-    editor = nvim
-    pager = delta
-
 [init]
     defaultBranch = main
 
-[pull]
-    rebase = false
-
 [push]
     autoSetupRemote = true
+
+[pull]
+    rebase = false
 
 [fetch]
     prune = true
@@ -21,13 +17,23 @@
 [merge]
     conflictstyle = zdiff3
 
+[core]
+    editor = nvim
+    pager = delta
+
 [interactive]
     diffFilter = delta --color-only
 
-[delta]
-    navigate = true
-    side-by-side = true
-    line-numbers = true
-
 [color]
     ui = auto
+
+[delta]
+    navigate = true
+    syntax-theme = ansi
+    line-numbers = true
+    features = decorations
+
+[delta "decorations"]
+    file-style = yellow
+    file-decoration-style = none
+    hunk-header-decoration-style = blue box
