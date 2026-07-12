@@ -1,0 +1,33 @@
+[user]
+    name = Chayaphol Prapaipornlert
+    email = chayaphol.pr@gmail.com
+
+[core]
+    editor = nvim
+    pager = delta
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[push]
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    side-by-side = true
+    line-numbers = true
+
+[color]
+    ui = auto
